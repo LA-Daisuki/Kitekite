@@ -33,6 +33,7 @@
       justify-content: space-between;
       align-items: center;
       margin-bottom: 90px;
+      gap: 20px;
     }
 
     .logo {
@@ -41,10 +42,30 @@
       letter-spacing: 1px;
     }
 
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
     .nav-links a {
       margin-left: 24px;
       color: #ddd;
       font-size: 15px;
+    }
+
+    .language-toggle {
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      background: rgba(255, 255, 255, 0.08);
+      color: white;
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .language-toggle:hover {
+      background: rgba(255, 255, 255, 0.16);
     }
 
     .hero {
@@ -180,17 +201,24 @@
       padding: 28px;
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 760px) {
       nav {
         align-items: flex-start;
         flex-direction: column;
-        gap: 18px;
         margin-bottom: 70px;
       }
 
+      .nav-right {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 16px;
+      }
+
       .nav-links a {
+        display: inline-block;
         margin-left: 0;
         margin-right: 16px;
+        margin-bottom: 8px;
       }
     }
   </style>
@@ -199,88 +227,207 @@
   <header>
     <nav>
       <div class="logo">ZONE 22 LA</div>
-      <div class="nav-links">
-        <a href="#programs">Programs</a>
-        <a href="#events">Events</a>
-        <a href="#media">Media</a>
-        <a href="#contact">Contact</a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="#programs" data-i18n="navPrograms">Programs</a>
+          <a href="#events" data-i18n="navEvents">Events</a>
+          <a href="#media" data-i18n="navMedia">Media</a>
+          <a href="#contact" data-i18n="navContact">Contact</a>
+        </div>
+        <button class="language-toggle" id="languageToggle">日本語</button>
       </div>
     </nav>
 
     <div class="hero">
-      <div class="tagline">Los Angeles Baseball Development</div>
-      <h1>Build your game. <span>Earn your shot.</span></h1>
-      <p>
+      <div class="tagline" data-i18n="heroTagline">Los Angeles Baseball Development</div>
+      <h1><span data-i18n="heroTitleOne">Build your game.</span> <span data-i18n="heroTitleTwo">Earn your shot.</span></h1>
+      <p data-i18n="heroText">
         Zone 22 LA helps baseball players sharpen their skills, compete in high-level environments,
         and create exposure through training, showcases, games, and media coverage.
       </p>
-      <a class="button" href="#contact">Join the Zone</a>
+      <a class="button" href="#contact" data-i18n="heroButton">Join the Zone</a>
     </div>
   </header>
 
   <section id="programs">
-    <div class="section-title">Programs</div>
-    <h2>Designed for serious baseball development</h2>
+    <div class="section-title" data-i18n="programsLabel">Programs</div>
+    <h2 data-i18n="programsTitle">Designed for serious baseball development</h2>
     <div class="cards">
       <div class="card">
-        <h3>Training</h3>
-        <p>Skill work for hitting, fielding, throwing, athletic movement, and game IQ.</p>
+        <h3 data-i18n="trainingTitle">Training</h3>
+        <p data-i18n="trainingText">Skill work for hitting, fielding, throwing, athletic movement, and game IQ.</p>
       </div>
       <div class="card">
-        <h3>Showcases</h3>
-        <p>Player evaluation opportunities built around competition, visibility, and measurable development.</p>
+        <h3 data-i18n="showcasesTitle">Showcases</h3>
+        <p data-i18n="showcasesText">Player evaluation opportunities built around competition, visibility, and measurable development.</p>
       </div>
       <div class="card">
-        <h3>Game Coverage</h3>
-        <p>Media, livestreams, highlights, and player spotlights that help athletes build exposure.</p>
+        <h3 data-i18n="coverageTitle">Game Coverage</h3>
+        <p data-i18n="coverageText">Media, livestreams, highlights, and player spotlights that help athletes build exposure.</p>
       </div>
     </div>
   </section>
 
   <section id="events" class="dark-section">
-    <div class="section-title">Showcases & Events</div>
-    <h2>Upcoming Events</h2>
+    <div class="section-title" data-i18n="eventsLabel">Showcases & Events</div>
+    <h2 data-i18n="eventsTitle">Upcoming Events</h2>
     <div class="event">
-      <h3>Upcoming Showcase</h3>
-      <p>Date, location, age group, and registration link coming soon.</p>
+      <h3 data-i18n="eventOneTitle">Upcoming Showcase</h3>
+      <p data-i18n="eventOneText">Date, location, age group, and registration link coming soon.</p>
     </div>
     <div class="event">
-      <h3>Training Camp</h3>
-      <p>Date, location, age group, and registration link coming soon.</p>
+      <h3 data-i18n="eventTwoTitle">Training Camp</h3>
+      <p data-i18n="eventTwoText">Date, location, age group, and registration link coming soon.</p>
     </div>
     <div class="event">
-      <h3>Live Game Broadcast</h3>
-      <p>Add YouTube or livestream details here.</p>
+      <h3 data-i18n="eventThreeTitle">Live Game Broadcast</h3>
+      <p data-i18n="eventThreeText">Add YouTube or livestream details here.</p>
     </div>
   </section>
 
   <section id="media">
-    <div class="section-title">Media</div>
-    <h2>Highlights, interviews, and game film</h2>
-    <p>
+    <div class="section-title" data-i18n="mediaLabel">Media</div>
+    <h2 data-i18n="mediaTitle">Highlights, interviews, and game film</h2>
+    <p data-i18n="mediaText">
       Embed YouTube videos, Instagram reels, player interviews, and livestream recordings here so families,
       coaches, and scouts can quickly see what Zone 22 LA is about.
     </p>
   </section>
 
   <section id="contact" class="contact">
-    <div class="section-title">Contact</div>
-    <h2>Ready to enter Zone 22?</h2>
-    <p>Email: contact@zone22la.com</p>
-    <p>Instagram: @zone22_la</p>
-    <p>Location: Los Angeles, California</p>
+    <div class="section-title" data-i18n="contactLabel">Contact</div>
+    <h2 data-i18n="contactTitle">Ready to enter Zone 22?</h2>
+    <p><span data-i18n="emailLabel">Email</span>: contact@zone22la.com</p>
+    <p><span data-i18n="instagramLabel">Instagram</span>: @zone22_la</p>
+    <p><span data-i18n="locationLabel">Location</span>: <span data-i18n="locationText">Los Angeles, California</span></p>
 
     <form>
-      <input type="text" placeholder="Player / Parent Name" />
-      <input type="email" placeholder="Email" />
-      <input type="text" placeholder="Player Age / Grad Year" />
-      <textarea placeholder="What are you interested in?"></textarea>
-      <button class="button" type="submit">Send Message</button>
+      <input type="text" data-i18n-placeholder="namePlaceholder" placeholder="Player / Parent Name" />
+      <input type="email" data-i18n-placeholder="emailPlaceholder" placeholder="Email" />
+      <input type="text" data-i18n-placeholder="agePlaceholder" placeholder="Player Age / Grad Year" />
+      <textarea data-i18n-placeholder="messagePlaceholder" placeholder="What are you interested in?"></textarea>
+      <button class="button" type="submit" data-i18n="sendButton">Send Message</button>
     </form>
   </section>
 
   <footer>
-    <p>&copy; 2026 Zone 22 LA. All rights reserved.</p>
+    <p data-i18n="footerText">&copy; 2026 Zone 22 LA. All rights reserved.</p>
   </footer>
+
+  <script>
+    const translations = {
+      en: {
+        navPrograms: "Programs",
+        navEvents: "Events",
+        navMedia: "Media",
+        navContact: "Contact",
+        heroTagline: "Los Angeles Baseball Development",
+        heroTitleOne: "Build your game.",
+        heroTitleTwo: "Earn your shot.",
+        heroText: "Zone 22 LA helps baseball players sharpen their skills, compete in high-level environments, and create exposure through training, showcases, games, and media coverage.",
+        heroButton: "Join the Zone",
+        programsLabel: "Programs",
+        programsTitle: "Designed for serious baseball development",
+        trainingTitle: "Training",
+        trainingText: "Skill work for hitting, fielding, throwing, athletic movement, and game IQ.",
+        showcasesTitle: "Showcases",
+        showcasesText: "Player evaluation opportunities built around competition, visibility, and measurable development.",
+        coverageTitle: "Game Coverage",
+        coverageText: "Media, livestreams, highlights, and player spotlights that help athletes build exposure.",
+        eventsLabel: "Showcases & Events",
+        eventsTitle: "Upcoming Events",
+        eventOneTitle: "Upcoming Showcase",
+        eventOneText: "Date, location, age group, and registration link coming soon.",
+        eventTwoTitle: "Training Camp",
+        eventTwoText: "Date, location, age group, and registration link coming soon.",
+        eventThreeTitle: "Live Game Broadcast",
+        eventThreeText: "Add YouTube or livestream details here.",
+        mediaLabel: "Media",
+        mediaTitle: "Highlights, interviews, and game film",
+        mediaText: "Embed YouTube videos, Instagram reels, player interviews, and livestream recordings here so families, coaches, and scouts can quickly see what Zone 22 LA is about.",
+        contactLabel: "Contact",
+        contactTitle: "Ready to enter Zone 22?",
+        emailLabel: "Email",
+        instagramLabel: "Instagram",
+        locationLabel: "Location",
+        locationText: "Los Angeles, California",
+        namePlaceholder: "Player / Parent Name",
+        emailPlaceholder: "Email",
+        agePlaceholder: "Player Age / Grad Year",
+        messagePlaceholder: "What are you interested in?",
+        sendButton: "Send Message",
+        footerText: "© 2026 Zone 22 LA. All rights reserved.",
+        toggleButton: "日本語"
+      },
+      ja: {
+        navPrograms: "プログラム",
+        navEvents: "イベント",
+        navMedia: "メディア",
+        navContact: "お問い合わせ",
+        heroTagline: "ロサンゼルスの野球育成プログラム",
+        heroTitleOne: "技術を磨き、",
+        heroTitleTwo: "チャンスをつかめ。",
+        heroText: "Zone 22 LAは、野球選手がスキルを高め、レベルの高い環境で競い、トレーニング・ショーケース・試合・メディア発信を通して露出の機会を広げることをサポートします。",
+        heroButton: "参加する",
+        programsLabel: "プログラム",
+        programsTitle: "本気で成長したい選手のために",
+        trainingTitle: "トレーニング",
+        trainingText: "打撃、守備、送球、身体能力、野球IQを高めるためのスキル練習。",
+        showcasesTitle: "ショーケース",
+        showcasesText: "競争、可視性、成長の測定を重視した選手評価の機会。",
+        coverageTitle: "試合・メディア配信",
+        coverageText: "ライブ配信、ハイライト、選手紹介を通して、アスリートの露出を高めます。",
+        eventsLabel: "ショーケース・イベント",
+        eventsTitle: "今後のイベント",
+        eventOneTitle: "次回ショーケース",
+        eventOneText: "日程、場所、対象年齢、登録リンクは近日公開予定です。",
+        eventTwoTitle: "トレーニングキャンプ",
+        eventTwoText: "日程、場所、対象年齢、登録リンクは近日公開予定です。",
+        eventThreeTitle: "試合ライブ配信",
+        eventThreeText: "YouTubeまたはライブ配信の詳細をここに追加してください。",
+        mediaLabel: "メディア",
+        mediaTitle: "ハイライト、インタビュー、試合映像",
+        mediaText: "YouTube動画、Instagramリール、選手インタビュー、ライブ配信の録画を掲載し、家族・コーチ・スカウトがZone 22 LAの活動をすぐに確認できるようにします。",
+        contactLabel: "お問い合わせ",
+        contactTitle: "Zone 22に参加する準備はできましたか？",
+        emailLabel: "メール",
+        instagramLabel: "インスタグラム",
+        locationLabel: "所在地",
+        locationText: "カリフォルニア州ロサンゼルス",
+        namePlaceholder: "選手 / 保護者の名前",
+        emailPlaceholder: "メールアドレス",
+        agePlaceholder: "選手の年齢 / 卒業年度",
+        messagePlaceholder: "興味のある内容を入力してください",
+        sendButton: "送信する",
+        footerText: "© 2026 Zone 22 LA. All rights reserved.",
+        toggleButton: "English"
+      }
+    };
+
+    let currentLanguage = "en";
+    const languageToggle = document.getElementById("languageToggle");
+
+    function setLanguage(language) {
+      currentLanguage = language;
+      document.documentElement.lang = language;
+
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const key = element.getAttribute("data-i18n");
+        element.textContent = translations[language][key];
+      });
+
+      document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+        const key = element.getAttribute("data-i18n-placeholder");
+        element.placeholder = translations[language][key];
+      });
+
+      languageToggle.textContent = translations[language].toggleButton;
+    }
+
+    languageToggle.addEventListener("click", () => {
+      const nextLanguage = currentLanguage === "en" ? "ja" : "en";
+      setLanguage(nextLanguage);
+    });
+  </script>
 </body>
 </html>

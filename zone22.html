@@ -398,7 +398,7 @@
       <span data-i18n="locationText"></span>
     </p>
 
-    <form>
+    <form id="contactForm" onsubmit="sendJapaneseEmail(event)">   <input type="text" name="name" data-i18n-placeholder="namePlaceholder" required />   <input type="email" name="email" data-i18n-placeholder="emailPlaceholder" required />   <input type="text" name="age" data-i18n-placeholder="agePlaceholder" required />   <textarea name="message" data-i18n-placeholder="messagePlaceholder" required></textarea>   <button class="button" type="submit" data-i18n="sendButton"></button> </form>
       <input type="text" data-i18n-placeholder="namePlaceholder" />
       <input type="email" data-i18n-placeholder="emailPlaceholder" />
       <input type="text" data-i18n-placeholder="agePlaceholder" />
@@ -547,8 +547,35 @@
           element.placeholder = translations[language][key];
         }
       });
+const contactForm = document.getElementById("contactForm");
 
+if (language === "en") {
+  contactForm.classList.add("is-hidden");
+} else {
+  contactForm.classList.remove("is-hidden");
+}
       languageToggle.textContent = translations[language].toggleButton;
+    function sendJapaneseEmail(event) {
+  event.preventDefault();
+
+  if (currentLanguage !== "ja") return;
+
+  const form = event.target;
+  const name = form.name.value;
+  const email = form.email.value;
+  const age = form.age.value;
+  const message = form.message.value;
+
+  const subject = encodeURIComponent("ZONE22 お問い合わせ");
+  const body = encodeURIComponent(
+    `選手 / 保護者の名前: ${name}\n` +
+    `メールアドレス: ${email}\n` +
+    `選手の年齢 / 卒業年度: ${age}\n\n` +
+    `興味のある内容・質問:\n${message}`
+  );
+
+  window.location.href = `mailto:miukiyokoyama@gmail.com?subject=${subject}&body=${body}`;
+}
     }
 
     languageToggle.addEventListener("click", () => {

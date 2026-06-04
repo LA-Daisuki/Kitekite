@@ -5,11 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zone 22 LA | Baseball Development</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: Arial, sans-serif;
@@ -18,10 +14,7 @@
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
     header {
       background: linear-gradient(135deg, #111, #3b0000);
@@ -55,17 +48,13 @@
     }
 
     .language-toggle {
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.08);
       color: white;
       padding: 9px 14px;
       border-radius: 999px;
       font-weight: bold;
       cursor: pointer;
-    }
-
-    .language-toggle:hover {
-      background: rgba(255, 255, 255, 0.16);
     }
 
     .hero {
@@ -87,9 +76,7 @@
       margin-bottom: 24px;
     }
 
-    h1 span {
-      color: #e11d2e;
-    }
+    h1 span { color: #e11d2e; }
 
     .hero p {
       color: #ddd;
@@ -107,9 +94,7 @@
       font-weight: bold;
     }
 
-    section {
-      padding: 80px 8%;
-    }
+    section { padding: 80px 8%; }
 
     .section-title {
       color: #ff4d4d;
@@ -131,38 +116,26 @@
       margin-top: 36px;
     }
 
-    .card {
+    .card, .event {
       background: #171717;
       border: 1px solid #292929;
       border-radius: 24px;
       padding: 28px;
     }
 
-    .card h3 {
-      color: white;
-      margin-bottom: 12px;
-      font-size: 24px;
+    .event { margin-bottom: 16px; }
+
+    .event a {
+      color: #ff4d4d;
+      font-weight: bold;
+      text-decoration: underline;
     }
 
-    .card p, section p {
-      color: #cfcfcf;
-    }
+    .card p, section p { color: #cfcfcf; }
 
-    .dark-section {
-      background: #111;
-    }
+    .dark-section { background: #111; }
 
-    .event {
-      background: #1b1b1b;
-      border-radius: 18px;
-      padding: 22px;
-      margin-bottom: 16px;
-      border: 1px solid #292929;
-    }
-
-    .testimonial-section {
-      background: #0d0d0d;
-    }
+    .testimonial-section { background: #0d0d0d; }
 
     .testimonial-card {
       display: grid;
@@ -198,9 +171,6 @@
       border-left: 4px solid #e11d2e;
       padding-left: 22px;
       margin-bottom: 24px;
-      max-height: none;
-      overflow: visible;
-      white-space: normal;
     }
 
     .testimonial-author {
@@ -219,9 +189,33 @@
       color: #111;
     }
 
-    .contact p {
-      color: #444;
+    .contact p { color: #444; }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin: 22px 0;
     }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #e11d2e;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: bold;
+    }
+
+    .social-link svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    .is-hidden { display: none; }
 
     form {
       display: grid;
@@ -238,9 +232,7 @@
       font-size: 16px;
     }
 
-    textarea {
-      min-height: 120px;
-    }
+    textarea { min-height: 120px; }
 
     button {
       border: none;
@@ -268,6 +260,13 @@
         gap: 16px;
       }
 
+      .nav-links a {
+        display: inline-block;
+        margin-left: 0;
+        margin-right: 16px;
+        margin-bottom: 8px;
+      }
+
       .testimonial-card {
         grid-template-columns: 1fr;
       }
@@ -276,16 +275,10 @@
         height: auto;
         max-height: 620px;
       }
-
-      .nav-links a {
-        display: inline-block;
-        margin-left: 0;
-        margin-right: 16px;
-        margin-bottom: 8px;
-      }
     }
   </style>
 </head>
+
 <body>
   <header>
     <nav>
@@ -302,107 +295,120 @@
     </nav>
 
     <div class="hero">
-      <div class="tagline" data-i18n="heroTagline">Los Angeles Baseball Development</div>
-      <h1><span data-i18n="heroTitleOne">Build your game.</span> <span data-i18n="heroTitleTwo">Earn your shot.</span></h1>
-      <p data-i18n="heroText">
-        Zone 22 LA helps baseball players sharpen their skills, compete in high-level environments,
-        and create exposure through training, showcases, games, and media coverage.
-      </p>
-      <a class="button" href="#contact" data-i18n="heroButton">Join the Zone</a>
+      <div class="tagline" data-i18n="heroTagline"></div>
+      <h1>
+        <span data-i18n="heroTitleOne"></span>
+        <span data-i18n="heroTitleTwo"></span>
+      </h1>
+      <p data-i18n="heroText"></p>
+      <a class="button" href="#contact" data-i18n="heroButton"></a>
     </div>
   </header>
 
   <section id="programs">
-    <div class="section-title" data-i18n="programsLabel">Programs</div>
-    <h2 data-i18n="programsTitle">Designed for serious baseball development</h2>
+    <div class="section-title" data-i18n="programsLabel"></div>
+    <h2 data-i18n="programsTitle"></h2>
+
     <div class="cards">
       <div class="card">
-        <h3 data-i18n="trainingTitle">Training</h3>
-        <p data-i18n="trainingText">Skill work for hitting, fielding, throwing, athletic movement, and game IQ.</p>
+        <h3 data-i18n="trainingTitle"></h3>
+        <p data-i18n="trainingText"></p>
       </div>
       <div class="card">
-        <h3 data-i18n="showcasesTitle">Showcases</h3>
-        <p data-i18n="showcasesText">Player evaluation opportunities built around competition, visibility, and measurable development.</p>
+        <h3 data-i18n="showcasesTitle"></h3>
+        <p data-i18n="showcasesText"></p>
       </div>
       <div class="card">
-        <h3 data-i18n="coverageTitle">Game Coverage</h3>
-        <p data-i18n="coverageText">Media, livestreams, highlights, and player spotlights that help athletes build exposure.</p>
+        <h3 data-i18n="coverageTitle"></h3>
+        <p data-i18n="coverageText"></p>
       </div>
     </div>
   </section>
 
   <section id="events" class="dark-section">
-    <div class="section-title" data-i18n="eventsLabel">Showcases & Events</div>
-    <h2 data-i18n="eventsTitle">Upcoming Events</h2>
+    <div class="section-title" data-i18n="eventsLabel"></div>
+    <h2 data-i18n="eventsTitle"></h2>
+
     <div class="event">
-      <h3 data-i18n="eventOneTitle">Upcoming Showcase</h3>
-      <p data-i18n="eventOneText">Date, location, age group, and registration link coming soon.</p>
+      <h3 data-i18n="eventOneTitle"></h3>
+      <p data-i18n="eventOneText"></p>
     </div>
+
     <div class="event">
-      <h3 data-i18n="eventTwoTitle">Training Camp</h3>
-      <p data-i18n="eventTwoText">Date, location, age group, and registration link coming soon.</p>
+      <h3 data-i18n="eventTwoTitle"></h3>
+      <p data-i18n="eventTwoText"></p>
     </div>
+
     <div class="event">
-      <h3 data-i18n="eventThreeTitle">Live Game Broadcast</h3>
-      <p data-i18n="eventThreeText">Add YouTube or livestream details here.</p>
+      <h3 data-i18n="eventThreeTitle"></h3>
+      <p data-i18n="eventThreeText"></p>
     </div>
   </section>
 
   <section id="media">
-    <div class="section-title" data-i18n="mediaLabel">Media</div>
-    <h2 data-i18n="mediaTitle">Highlights, interviews, and game film</h2>
-    <p data-i18n="mediaText">
-      Embed YouTube videos, Instagram reels, player interviews, and livestream recordings here so families,
-      coaches, and scouts can quickly see what Zone 22 LA is about.
-    </p>
+    <div class="section-title" data-i18n="mediaLabel"></div>
+    <h2 data-i18n="mediaTitle"></h2>
+    <p data-i18n="mediaText"></p>
+
+    <div class="social-links">
+      <a class="social-link" href="https://www.instagram.com/zone22_la/" target="_blank" rel="noopener noreferrer">
+        Instagram @zone22_la
+      </a>
+
+      <a class="social-link" href="https://www.youtube.com/@zone22-losangeles47" target="_blank" rel="noopener noreferrer">
+        YouTube
+      </a>
+    </div>
   </section>
 
   <section id="testimonial" class="testimonial-section">
-    <div class="section-title" data-i18n="testimonialLabel">選手の声</div>
-    <h2 data-i18n="testimonialTitle">海外で挑戦する選手からのメッセージ</h2>
+    <div class="section-title" data-i18n="testimonialLabel"></div>
+    <h2 data-i18n="testimonialTitle"></h2>
 
     <div class="testimonial-card">
-      <img src="IMG_6888.jpeg" alt="熊谷航選手" />
+      <img src="IMG_6888.jpeg" alt="Wataru Kumagai" />
 
       <div>
-        <p class="testimonial-intro" data-i18n="testimonialIntro">
-          現在、メキシコのプロ野球チーム「アルゴドネロス・デ・サンルイス（Algodoneros de San Luis）」で活躍する熊谷航選手からのメッセージです。
-        </p>
-
-        <blockquote class="testimonial-quote" data-i18n="testimonialQuote">
-          ZONE22でプレーする最大のメリットは、アメリカ独立リーグ契約へのチャンスがあることです。<br><br>
-
-          高額な費用をかけて短期間のショーケースに参加するよりも、その費用を自分自身への投資に使いながら、じっくりと野球に向き合うことができます。<br><br>
-
-          実戦の中で成長し、自分の可能性を広げながら、アメリカでのキャリアに挑戦できる環境がここにはあります。<br><br>
-
-          そして何より、ロサンゼルスでの生活を満喫しながら野球に打ち込めることも、ZONE22ならではの魅力です。
-        </blockquote>
-
-        <p class="testimonial-author" data-i18n="testimonialAuthor">― 熊谷 航</p>
-        <p class="testimonial-team" data-i18n="testimonialTeam">Algodoneros de San Luis（メキシコプロ野球）</p>
+        <p class="testimonial-intro" data-i18n="testimonialIntro"></p>
+        <blockquote class="testimonial-quote" data-i18n="testimonialQuote"></blockquote>
+        <p class="testimonial-author" data-i18n="testimonialAuthor"></p>
+        <p class="testimonial-team" data-i18n="testimonialTeam"></p>
       </div>
     </div>
   </section>
 
   <section id="contact" class="contact">
-    <div class="section-title" data-i18n="contactLabel">Contact</div>
-    <h2 data-i18n="contactTitle">Ready to enter Zone 22?</h2>
-    <p><span data-i18n="emailLabel">Email</span>: contact@zone22la.com</p>
-    <p><span data-i18n="instagramLabel">Instagram</span>: @zone22_la</p>
-    <p><span data-i18n="locationLabel">Location</span>: <span data-i18n="locationText">Los Angeles, California</span></p>
+    <div class="section-title" data-i18n="contactLabel"></div>
+    <h2 data-i18n="contactTitle"></h2>
+
+    <p id="emailLine" data-i18n="emailLine"></p>
+
+    <div class="social-links">
+      <a class="social-link" href="https://www.instagram.com/zone22_la/" target="_blank" rel="noopener noreferrer">
+        Instagram @zone22_la
+      </a>
+
+      <a class="social-link" href="https://www.youtube.com/@zone22-losangeles47" target="_blank" rel="noopener noreferrer">
+        YouTube
+      </a>
+    </div>
+
+    <p>
+      <span data-i18n="locationLabel"></span>:
+      <span data-i18n="locationText"></span>
+    </p>
 
     <form>
-      <input type="text" data-i18n-placeholder="namePlaceholder" placeholder="Player / Parent Name" />
-      <input type="email" data-i18n-placeholder="emailPlaceholder" placeholder="Email" />
-      <input type="text" data-i18n-placeholder="agePlaceholder" placeholder="Player Age / Grad Year" />
-      <textarea data-i18n-placeholder="messagePlaceholder" placeholder="What are you interested in?"></textarea>
-      <button class="button" type="submit" data-i18n="sendButton">Send Message</button>
+      <input type="text" data-i18n-placeholder="namePlaceholder" />
+      <input type="email" data-i18n-placeholder="emailPlaceholder" />
+      <input type="text" data-i18n-placeholder="agePlaceholder" />
+      <textarea data-i18n-placeholder="messagePlaceholder"></textarea>
+      <button class="button" type="submit" data-i18n="sendButton"></button>
     </form>
   </section>
 
   <footer>
-    <p data-i18n="footerText">&copy; 2026 Zone 22 LA. All rights reserved.</p>
+    <p data-i18n="footerText"></p>
   </footer>
 
   <script>
@@ -412,11 +418,13 @@
         navEvents: "Events",
         navMedia: "Media",
         navContact: "Contact",
+
         heroTagline: "Los Angeles Baseball Development",
         heroTitleOne: "Build your game.",
         heroTitleTwo: "Earn your shot.",
         heroText: "Zone 22 LA helps baseball players sharpen their skills, compete in high-level environments, and create exposure through training, showcases, games, and media coverage.",
         heroButton: "Join the Zone",
+
         programsLabel: "Programs",
         programsTitle: "Designed for serious baseball development",
         trainingTitle: "Training",
@@ -425,27 +433,30 @@
         showcasesText: "Player evaluation opportunities built around competition, visibility, and measurable development.",
         coverageTitle: "Game Coverage",
         coverageText: "Media, livestreams, highlights, and player spotlights that help athletes build exposure.",
+
         eventsLabel: "Showcases & Events",
         eventsTitle: "Upcoming Events",
-        eventOneTitle: "Upcoming Showcase",
-        eventOneText: "Date, location, age group, and registration link coming soon.",
+        eventOneTitle: "Upcoming Baseball Showcase Games – June 2026",
+        eventOneText: "Join us for our June 2026 Baseball Showcase Games, held every Tuesday, Wednesday, and Friday at the Glendale Sports Complex.<br><br><strong>Schedule</strong><br>Dates: Every Tuesday, Wednesday, and Friday in June 2026<br>Time: 8:00 AM – 12:30 PM<br><br><strong>Location</strong><br>Glendale Sports Complex – Field #1<br>2200 Fern Lane<br>Glendale, CA 91208<br><br>These showcase games provide players with the opportunity to compete, develop their skills, and gain valuable exposure in a competitive baseball environment.",
         eventTwoTitle: "Training Camp",
         eventTwoText: "Date, location, age group, and registration link coming soon.",
         eventThreeTitle: "Live Game Broadcast",
-        eventThreeText: "Add YouTube or livestream details here.",
+        eventThreeText: "Watch live game broadcasts and past streams on our YouTube channel.<br><a href='https://www.youtube.com/@zone22-losangeles47/streams' target='_blank' rel='noopener noreferrer'>View live streams</a>",
+
         mediaLabel: "Media",
         mediaTitle: "Highlights, interviews, and game film",
-        mediaText: "Embed YouTube videos, Instagram reels, player interviews, and livestream recordings here so families, coaches, and scouts can quickly see what Zone 22 LA is about.",
+        mediaText: "Follow Zone 22 LA on Instagram and YouTube for highlights, interviews, player features, live game broadcasts, and past streams.",
+
         testimonialLabel: "Player Testimonial",
         testimonialTitle: "A message from a player competing overseas",
         testimonialIntro: "A message from Wataru Kumagai, who currently plays for the Mexican professional baseball team Algodoneros de San Luis.",
         testimonialQuote: "The biggest benefit of playing with ZONE22 is the opportunity to earn a contract with an American independent league.<br><br>Instead of spending a large amount of money on a short-term showcase, you can invest that money in yourself and take the time to truly focus on your development as a baseball player.<br><br>ZONE22 provides an environment where you can grow through real game experience, expand your potential, and challenge yourself to build a baseball career in the United States.<br><br>On top of that, being able to enjoy life in Los Angeles while fully dedicating yourself to baseball is one of the unique advantages of ZONE22.",
         testimonialAuthor: "― Wataru Kumagai",
         testimonialTeam: "Algodoneros de San Luis / Mexican Professional Baseball",
+
         contactLabel: "Contact",
         contactTitle: "Ready to enter Zone 22?",
-        emailLabel: "Email",
-        instagramLabel: "Instagram",
+        emailLine: "",
         locationLabel: "Location",
         locationText: "Los Angeles, California",
         namePlaceholder: "Player / Parent Name",
@@ -453,19 +464,23 @@
         agePlaceholder: "Player Age / Grad Year",
         messagePlaceholder: "What are you interested in?",
         sendButton: "Send Message",
+
         footerText: "© 2026 Zone 22 LA. All rights reserved.",
         toggleButton: "日本語"
       },
+
       ja: {
         navPrograms: "プログラム",
         navEvents: "イベント",
         navMedia: "メディア",
         navContact: "お問い合わせ",
+
         heroTagline: "ロサンゼルスの野球育成プログラム",
         heroTitleOne: "技術を磨き、",
         heroTitleTwo: "<br>チャンスを<br>つかめ。",
         heroText: "ZONE22は、トレーニング、ショーケース、試合映像の配信を通じて、選手の成長をサポートするとともに、大学コーチやスカウトに自分をアピールする機会を提供します。",
         heroButton: "参加する",
+
         programsLabel: "プログラム",
         programsTitle: "本気で成長したい選手のために",
         trainingTitle: "トレーニング",
@@ -474,27 +489,30 @@
         showcasesText: "大学コーチやスカウトの前でプレーし、自分の実力をアピールできるショーケースや評価イベントを開催しています。",
         coverageTitle: "試合・メディア配信",
         coverageText: "ライブ配信、ハイライト、選手紹介を通して、アスリートの露出を高めます。",
+
         eventsLabel: "ショーケース・イベント",
         eventsTitle: "今後のイベント",
-        eventOneTitle: "次回ショーケース",
-        eventOneText: "日程、場所、対象年齢、登録リンクは近日公開予定です。",
+        eventOneTitle: "2026年6月 野球ショーケースゲーム",
+        eventOneText: "2026年6月、Glendale Sports Complexにて野球ショーケースゲームを開催します。開催日は毎週火曜日・水曜日・金曜日です。<br><br><strong>スケジュール</strong><br>日程：2026年6月の毎週火曜日・水曜日・金曜日<br>時間：午前8:00〜午後12:30<br><br><strong>場所</strong><br>Glendale Sports Complex – Field #1<br>2200 Fern Lane<br>Glendale, CA 91208<br><br>このショーケースゲームでは、選手が実戦の中で競い合い、スキルを伸ばし、レベルの高い野球環境で自分をアピールする機会を得ることができます。",
         eventTwoTitle: "トレーニングキャンプ",
         eventTwoText: "日程、場所、対象年齢、登録リンクは近日公開予定です。",
         eventThreeTitle: "試合ライブ配信",
-        eventThreeText: "YouTubeまたはライブ配信の詳細をここに追加してください。",
+        eventThreeText: "試合のライブ配信や過去の配信は、YouTubeチャンネルからご覧いただけます。<br><a href='https://www.youtube.com/@zone22-losangeles47/streams' target='_blank' rel='noopener noreferrer'>ライブ配信を見る</a>",
+
         mediaLabel: "メディア",
         mediaTitle: "ハイライト、インタビュー、試合映像",
-        mediaText: "YouTube動画、Instagramリール、選手インタビュー、ライブ配信の録画を掲載し、家族・コーチ・スカウトがZone 22 LAの活動をすぐに確認できるようにします。",
+        mediaText: "InstagramとYouTubeでは、ハイライト、選手インタビュー、選手紹介、試合のライブ配信、過去の配信をご覧いただけます。",
+
         testimonialLabel: "選手の声",
         testimonialTitle: "海外で挑戦する選手からのメッセージ",
         testimonialIntro: "現在、メキシコのプロ野球チーム「アルゴドネロス・デ・サンルイス（Algodoneros de San Luis）」で活躍する熊谷航選手からのメッセージです。",
         testimonialQuote: "ZONE22でプレーする最大のメリットは、アメリカ独立リーグ契約へのチャンスがあることです。<br><br>高額な費用をかけて短期間のショーケースに参加するよりも、その費用を自分自身への投資に使いながら、じっくりと野球に向き合うことができます。<br><br>実戦の中で成長し、自分の可能性を広げながら、アメリカでのキャリアに挑戦できる環境がここにはあります。<br><br>そして何より、ロサンゼルスでの生活を満喫しながら野球に打ち込めることも、ZONE22ならではの魅力です。",
         testimonialAuthor: "― 熊谷 航",
         testimonialTeam: "Algodoneros de San Luis（メキシコプロ野球）",
+
         contactLabel: "お問い合わせ",
         contactTitle: "Zone 22に参加する準備はできましたか？",
-        emailLabel: "メール",
-        instagramLabel: "インスタグラム",
+        emailLine: "メール: ?????@gmail.com",
         locationLabel: "所在地",
         locationText: "カリフォルニア州ロサンゼルス",
         namePlaceholder: "選手 / 保護者の名前",
@@ -502,6 +520,7 @@
         agePlaceholder: "選手の年齢 / 卒業年度",
         messagePlaceholder: "興味のある内容を入力してください",
         sendButton: "送信する",
+
         footerText: "© 2026 Zone 22 LA. All rights reserved.",
         toggleButton: "English"
       }
@@ -516,14 +535,20 @@
 
       document.querySelectorAll("[data-i18n]").forEach((element) => {
         const key = element.getAttribute("data-i18n");
-        if (translations[language][key]) {
+
+        if (translations[language][key] !== undefined) {
           element.innerHTML = translations[language][key];
+
+          if (key === "emailLine") {
+            element.classList.toggle("is-hidden", translations[language][key] === "");
+          }
         }
       });
 
       document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
         const key = element.getAttribute("data-i18n-placeholder");
-        if (translations[language][key]) {
+
+        if (translations[language][key] !== undefined) {
           element.placeholder = translations[language][key];
         }
       });

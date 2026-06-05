@@ -398,13 +398,6 @@
       <span data-i18n="locationText"></span>
     </p>
 
-    <form id="contactForm" onsubmit="sendJapaneseEmail(event)">
-  <input type="text" name="name" data-i18n-placeholder="namePlaceholder" required />
-  <input type="email" name="email" data-i18n-placeholder="emailPlaceholder" required />
-  <input type="text" name="age" data-i18n-placeholder="agePlaceholder" required />
-  <textarea name="message" data-i18n-placeholder="messagePlaceholder" required></textarea>
-  <button class="button" type="submit" data-i18n="sendButton"></button>
-    </form>
   </section>
 
   <footer>
@@ -494,14 +487,9 @@
       testimonialTeam: "Algodoneros de San Luis（メキシコプロ野球）",
       contactLabel: "お問い合わせ",
       contactTitle: "Zone 22に参加する準備はできましたか？",
-      emailLine: "メール: harmonect@gmail.com",
+      emailLine: "Zone 22への参加にご興味がありましたら、<a href='mailto:harmonect@gmail.com' style='color:#e11d2e;font-weight:bold;'>harmonect@gmail.com</a>までメールにてご連絡ください。宿泊施設から野球ショーケースゲーム会場までの交通手段につきましても、別途料金にてサポートいたします。<br><br>その際、以下の内容をご記載ください。<br><br>・選手のお名前<br>・年齢または卒業予定年度<br>・これまでの野球経験<br>・ご興味のある分野やポジション<br>・ご質問など<br><br>皆さまからのご連絡をお待ちしております。",
       locationLabel: "所在地",
       locationText: "カリフォルニア州ロサンゼルス",
-      namePlaceholder: "選手 / 保護者の名前",
-      emailPlaceholder: "メールアドレス",
-      agePlaceholder: "選手の年齢 / 卒業年度",
-      messagePlaceholder: "興味のある内容を入力してください",
-      sendButton: "送信する",
       footerText: "© 2026 Zone 22 LA. All rights reserved.",
       toggleButton: "English"
     }
@@ -530,36 +518,7 @@
       }
     });
 
-    const contactForm = document.getElementById("contactForm");
-
-    if (language === "en") {
-      contactForm.classList.add("is-hidden");
-    } else {
-      contactForm.classList.remove("is-hidden");
-    }
-
     languageToggle.textContent = translations[language].toggleButton;
-  }
-
-  function sendJapaneseEmail(event) {
-    event.preventDefault();
-
-    const form = event.target;
-    const name = form.name.value;
-    const email = form.email.value;
-    const age = form.age.value;
-    const message = form.message.value;
-
-    const subject = encodeURIComponent("ZONE22 お問い合わせ");
-    const body = encodeURIComponent(
-      `選手 / 保護者の名前: ${name}\n` +
-      `メールアドレス: ${email}\n` +
-      `選手の年齢 / 卒業年度: ${age}\n\n` +
-      `興味のある内容・質問:\n${message}`
-    );
-
-    window.location.href =
-      `mailto:miukiyokoyama@gmail.com?subject=${subject}&body=${body}`;
   }
 
   languageToggle.addEventListener("click", () => {

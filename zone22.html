@@ -350,7 +350,7 @@
     <h2 data-i18n="mediaTitle"></h2>
     <p data-i18n="mediaText"></p>
 
-    <div class="social-links">
+    <div class="social-links" id="contactSocialLinks">
       <a class="social-link" href="https://www.instagram.com/zone22_la/" target="_blank" rel="noopener noreferrer">
         Instagram @zone22_la
       </a>
@@ -383,7 +383,7 @@
 
     <p id="emailLine" data-i18n="emailLine"></p>
 
-    <div class="social-links">
+    <div class="social-links" id="contactSocialLinks">
       <a class="social-link" href="https://www.instagram.com/zone22_la/" target="_blank" rel="noopener noreferrer">
         Instagram @zone22_la
       </a>
@@ -499,16 +499,37 @@
   const languageToggle = document.getElementById("languageToggle");
 
   function setLanguage(language) {
-    currentLanguage = language;
-    document.documentElement.lang = language;
+currentLanguage = language;
+document.documentElement.lang = language;
 
-    document.querySelectorAll("[data-i18n]").forEach((element) => {
-      const key = element.getAttribute("data-i18n");
+document.querySelectorAll("[data-i18n]").forEach((element) => {
+const key = element.getAttribute("data-i18n");
 
-      if (translations[language][key] !== undefined) {
-        element.innerHTML = translations[language][key];
-      }
-    });
+if (translations[language][key] !== undefined) {
+  element.innerHTML = translations[language][key];
+}
+
+});
+
+document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+const key = element.getAttribute("data-i18n-placeholder");
+
+if (translations[language][key] !== undefined) {
+  element.placeholder = translations[language][key];
+}
+
+});
+
+const socialLinks = document.getElementById("contactSocialLinks");
+
+if (language === "ja") {
+socialLinks.classList.add("is-hidden");
+} else {
+socialLinks.classList.remove("is-hidden");
+}
+
+languageToggle.textContent = translations[language].toggleButton;
+}
 
     document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
       const key = element.getAttribute("data-i18n-placeholder");

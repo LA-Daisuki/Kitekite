@@ -5,6 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zone 22 LA | Baseball Development</title>
   <style>
+   .event-image,
+.field-map-image {
+  width: 100%;
+  max-width: 900px;
+  display: block;
+  margin: 24px auto 0;
+  border-radius: 18px;
+  border: 1px solid #333;
+}
+
+#location-map {
+  text-align: center;
+  background: #111;
+}
+
+#location-map p {
+  max-width: 800px;
+  margin: 0 auto 24px;
+} 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
@@ -330,9 +349,15 @@
     <h2 data-i18n="eventsTitle"></h2>
 
     <div class="event">
-      <h3 data-i18n="eventOneTitle"></h3>
-      <p data-i18n="eventOneText"></p>
-    </div>
+  <h3 data-i18n="eventTwoTitle"></h3>
+  <p data-i18n="eventTwoText"></p>
+
+  <img
+    src="Summer_Session.png"
+    alt="Zone 22 Summer Session"
+    class="event-image"
+   />
+   </div>
 
     <div class="event">
       <h3 data-i18n="eventTwoTitle"></h3>
@@ -344,7 +369,20 @@
       <p data-i18n="eventThreeText"></p>
     </div>
   </section>
+  <section id="location-map">
+  <div class="section-title">LOCATION</div>
+  <h2>Glendale Sports Complex</h2>
 
+  <p>
+    Field #1 is the designated Zone 22 showcase field.
+  </p>
+
+  <img
+    src="Zone22LA_Field.png"
+    alt="Zone 22 Field Location"
+    class="field-map-image"
+  />
+</section>
   <section id="media">
     <div class="section-title" data-i18n="mediaLabel"></div>
     <h2 data-i18n="mediaTitle"></h2>
